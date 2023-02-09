@@ -1,3 +1,4 @@
+//////////////// ex 15
 function ADDITION(a, b) { //+
     return a + b;
 }
@@ -32,6 +33,34 @@ function OPERATEUR(a, b, c) {
 }
 let a = parseFloat(prompt("Enter number 1: "));
 let b = parseFloat(prompt("Enter number 2: "));
+
+
+
+//////////////////////////::ex 16
+
+function plus_grand(noms) {
+    let plus_long = noms[0];
+    for (let i = 1; i < noms.length; i++) {
+        if (noms[i].length > plus_long.length) {
+            plus_long = noms[i];
+        }
+    }
+    return plus_long;
+}
+var noms = [];
+var nom = "";
+
+while (nom !== "arreter") {
+    nom = prompt("Entrez un nom ou arreter ): ");
+    if (nom !== "arreter") {
+        noms.push(nom);
+    }
+}
+
+var plus_long = plus_grand(noms);
+
+console.log("Le nom le plus long est: " + plus_long);
+
 let c = prompt("Enter +, -, *, / : ");
 
 let result = OPERATEUR(a, b, c);
