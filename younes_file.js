@@ -1,3 +1,4 @@
+///// Excercice : 14 
 
 function sum(num1,num2){
     return parseFloat(num1) + parseFloat(num2)
@@ -26,3 +27,22 @@ S_number = prompt("Enter the second number  ")
 operation = prompt("Enter your Operation (+,-,*,/)")
 
 choice(F_number,S_number,operation)
+//// Excercice : 15 
+function plus_grande(tableau){
+    let plus_grande = tableau[0];
+    for (let i=0;i<tableau.length;i++){
+       if(tableau[i].length >plus_grande.length)
+       {
+           plus_grande = tableau[i];
+        } 
+    }
+    return plus_grande;
+}
+tab = [];
+let i =0
+do{
+    tab[i] = prompt("Ajouter une chaine de caractère")
+    a = confirm("Voulez-Vous Ajouter une autre chaine de caractère")
+    i++
+}while(a!=false)
+alert(plus_grande(tab))
