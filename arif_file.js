@@ -33,44 +33,6 @@ function opeartion(x,y,z){
 
 }
 
-
-
-
-
-
-
-
-
-##objet
-
-function Cercle(r){
-    this.rayon=r
-}
-
-var ra=prompt("donnez le rayon")
-var c =new Cercle(ra)
-
-var surface=Math.PI*(c.rayon*c.rayon)
-
-
-document.write(surface)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 num1=parseInt(prompt("donnez la valeur 1"))
 num2=parseInt(prompt("donnez la valeur 2"))
 op=prompt("donnez opearation")
