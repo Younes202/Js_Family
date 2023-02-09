@@ -39,3 +39,32 @@ num2=parseInt(prompt("donnez la valeur 2"))
 op=prompt("donnez opearation")
 
 opeartion(num1,num2,op)
+
+
+
+
+//ex16
+function PLUS_GRAND(a){
+    let aff=a[0]
+    for(let i=1;i<a.length;i++){
+        if(a[i].length >aff.length){
+            aff=a[i]
+        
+        }
+    }
+    return aff
+
+
+}
+
+
+
+const tba =["REAL MADRID","Raja casablanca","ARSENAL","Liverpool","MAN CITY"]
+console.log(PLUS_GRAND(tba))
+
+
+
+
+
+
+
