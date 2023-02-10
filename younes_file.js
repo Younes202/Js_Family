@@ -46,3 +46,23 @@ do{
     i++
 }while(a!=false)
 alert(plus_grande(tab))
+-------------------------------------------------- EX:1 (Objets)-----------------------
+
+
+function Cercle(r){
+    this.rayon = parseFloat(r)
+    this.surface= function(){ 
+       return 3.14 * r * r
+    };
+    
+}
+
+rayon = parseFloat(prompt("Ecrire le rayon"))
+ce = new Cercle(rayon)
+alert("La surface de cercle  qu'a le rayon  "+rayon+"est : " + ce.surface())
+
+
+
+
+
+
