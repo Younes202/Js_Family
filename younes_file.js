@@ -136,6 +136,102 @@ afficher(array)
 alert(la_moyenne_plus_moins_note(array))
 
 
+------------------------ Ex : 4 ----------------------------- 
+    
+    
+    
+    function  Nextid(){
+    id= 0;
+    return id++;
+}
+function Product(desin,qte,pri)
+{
+    this.designation = desin;
+    this.quantity = parseInt(qte);
+    this.price = parseFloat(pri);
+    this.display_produit = function (){
+        return ""+this.designation + " " + this.quantity + " " + this.price + "\n"
+    }
+    this.tot_product = function (){
+        return this.quantity*this.price;
+    }
+}
+function Command() 
+{   
+    this.id = Nextid();
+    this.Product  = []
+    this.total = function (){
+        var to=0.0;
+        for (var i=0; i<this.Product.length; i++) {
+            to+=this.Product[i].tot_product()
+        }
+        return to;   
+    }
+    this.paiment = function (d){
+        if (d>this.total())
+        {
+            this.rendu  =   parseFloat(d) - parseFloat(this.total())  
+
+        }
+        else if (d<this.total()){
+            this.rendu  = "tu dois donner encore "   
+        }
+        else {
+            this.rendu  = 0.0   
+
+        }
+        return this.rendu
+    }
+    this.Display_Facture = function (n){
+            document.write("<div style='color:Gray'>")
+            document.write("       ******************* Facture  *******************  <br>")
+        for (var i=0; i<this.Product.length; i++) {
+            document.write("**** Produit "+(i+1))
+            document.write("<br>"+"Design :    \t        "+this.Product[i].designation+"<br>");
+            document.write("<br>"+"Prix Unit :   \t         "+this.Product[i].price+"<br>");
+            document.write("<br>"+"QTE :      \t      "+this.Product[i].quantity+"<br>");
+            document.write("<br>"+"Total Product"+(i+1)+":            "+this.Product[i].tot_product()+"<br>");
+            document.write("<br>")
+            document.write("<br>")
+       
+    }
+    document.write("<br>"+"Total à payer:            "+this.total()+"<br>");
+    document.write("<br>"+"Especes:            "+n+"<br>");
+    document.write("<br>"+"Rendu:            "+this.paiment(n));
+    document.write("</div>")
+
+   
+}
+}
+test_p = false
+com = new Command()
+
+  do{
+
+     do {
+    des = prompt("Enter the Designation ")
+    price = prompt("Enter the price ")
+    quantity = prompt("Enter the Quantity ")
+     if(parseFloat(price) && parseFloat(quantity)){
+        test_p = true
+     }
+    }while(test_p!=true)
+    pr = new Product(des,parseFloat(price),parseInt(quantity))
+    com.Product.push(pr)
+    conf = confirm("Voulez-vous continuer l'ajout des produits   ?")
+    }while(conf!=false || test_p !=true);
+test = false
+var pay
+do{
+    pay = prompt("Enter the Payment")
+    if (parseFloat(pay))
+    {
+        test = true
+    }
+
+}while(test!=true);
+com.Display_Facture(pay)
+
 
 
 
