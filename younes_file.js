@@ -107,7 +107,7 @@ function Etudiant(name,lastname,moy_gen){
             }
             else if (array[i].moy_gen < array[i + 1].moy_gen){
                 alert("la premiere note est "+array[i+1].moy_gen)
-                alert("la dernier note est "+array[i].moy_gen)
+                alert("la derniere note est "+array[i].moy_gen)
 
 
             }
@@ -118,7 +118,7 @@ function Etudiant(name,lastname,moy_gen){
 
                 }
             else{
-                alert("le moyenne est deux moyennes")
+                alert("la moyenne est deux moyennes")
             }
             return array
         }
