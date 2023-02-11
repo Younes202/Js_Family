@@ -60,6 +60,80 @@ function Cercle(r){
 rayon = parseFloat(prompt("Ecrire le rayon"))
 ce = new Cercle(rayon)
 alert("La surface de cercle  qu'a le rayon  "+rayon+"est : " + ce.surface())
+ 
+----------------------- correction ex : 2 (Objets) ------------------
+array = []
+function NextId(){
+    i=0;
+    return i++;
+}
+function Etudiant(name,lastname,moy_gen){
+    this.id = NextId();
+    this.name = name;
+    this.lastname = lastname;
+    this.moy_gen = moy_gen;
+    ajouter = function (array,et)
+    {
+
+              nom = prompt("Entrer le nom d'etudiant "+i)
+              prenom = prompt("Entrer le prenom d'etudiant "+i)
+              moyenne = prompt("Entrer la moyenne d'etudiant "+i)
+              et = new Etudiant(nom,prenom,parseFloat(moyenne));
+              array.push(et)
+              return array 
+    }
+
+    afficher = function (array){
+
+        for (let i = 0;i<array.length;i++)
+        {
+            alert("le nom d'etudiant "+array[i].name)
+            alert("le prenom d'etudiant "+array[i].lastname)
+            alert("la moyenne d'etudiant "+array[i].moy_gen)
+
+
+        }
+    }
+    la_moyenne_plus_moins_note = function (array){
+
+        for (let i = 0;i<array.length;i++)
+        {
+            if (array[i].moy_gen > array[i+1].moy_gen)
+            {
+                                alert("la premiere note est "+array[i].moy_gen)
+                                alert("la dernier note est "+array[i+1].moy_gen)
+
+
+            }
+            else if (array[i].moy_gen < array[i + 1].moy_gen){
+                alert("la premiere note est "+array[i+1].moy_gen)
+                alert("la dernier note est "+array[i].moy_gen)
+
+
+            }
+            else if (array[i].moy_gen == array[i + 1].moy_gen)
+                {
+
+                        alert("les notes sont en egalité")
+
+                }
+            else{
+                alert("le moyenne est deux moyennes")
+            }
+            return array
+        }
+
+    }
+}
+et = Etudiant();
+ett = Etudiant();
+ettt = Etudiant();
+ajouter(array,et)
+ajouter(array,ett)
+ajouter(array,ettt)
+
+afficher(array)
+alert(la_moyenne_plus_moins_note(array))
 
 
 
