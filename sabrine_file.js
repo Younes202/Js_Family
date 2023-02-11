@@ -67,3 +67,16 @@ let result = OPERATEUR(a, b, c);
 
 console.log(" result : " + result);
 
+//_______________________________________________ objet
+// ex1
+function Cercle(r){
+    this.rayon = parseFloat(r)
+    this.surface= function(){ 
+       return Math.PI * r * r
+    };
+    
+}
+
+rayon = parseFloat(prompt("Ecrire le rayon"))
+a = new Cercle(rayon)
+console.log("surface dyal  rayon est :" + a.surface())
